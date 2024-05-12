@@ -42,22 +42,33 @@ namespace QLTrungTamNN.QLTrungTamNgoaiNguGUI
             }
             else
             {
-                TaiKhoanBUS tkBUS = new TaiKhoanBUS();
-                TaiKhoanDTO tkDangNhap = tkBUS.ktDangNhap(tenTK, mk);
-                NhanVienBUS nvBUS = new NhanVienBUS();
-                nvDangNhap = nvBUS.thongTinNhanVien(tkDangNhap);
-                if (nvDangNhap != null)
+                try
                 {
+                    TaiKhoanBUS tkBUS = new TaiKhoanBUS();
+                    TaiKhoanDTO tkDangNhap = tkBUS.ktDangNhap(tenTK, mk);
+                    if (tkDangNhap == null)
+                    {
+                        MessageBox.Show("Không tìm thấy tài khoản");
+                        return;
+                    }
+
+                    NhanVienBUS nvBUS = new NhanVienBUS();
+                    nvDangNhap = nvBUS.thongTinNhanVien(tkDangNhap);
+                    if (nvDangNhap == null)
+                    {
+                        MessageBox.Show("Không tìm thấy thông tin nhân viên tương ứng");
+                        return;
+                    }
+
                     MessageBox.Show("Đăng nhập thành công");
                     frmMain f = new frmMain();
                     f.ShowDialog();
                     f.setDangNhapThanhCong(nvDangNhap);
                     this.Close();
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Đăng nhập thất bại");
-                    
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
                 }
             }
         }
