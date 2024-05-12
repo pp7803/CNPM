@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A5BDCF62-13A2-4807-A00B-481FEA2C6891}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QLTrungTamNN</RootNamespace>
+    <AssemblyName>QLTrungTamNN</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.6, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.6\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="QLTrungTamNgoaiNguBUS\HoaDonBUS.cs" />
+    <Compile Include="QLTrungTamNgoaiNguBUS\HocVienBUS.cs" />
+    <Compile Include="QLTrungTamNgoaiNguBUS\KhoaHocBUS.cs" />
+    <Compile Include="QLTrungTamNgoaiNguBUS\LoaiKhoaHocBUS.cs" />
+    <Compile Include="QLTrungTamNgoaiNguBUS\LoaiNhanVienBUS.cs" />
+    <Compile Include="QLTrungTamNgoaiNguBUS\LopHocBUS.cs" />
+    <Compile Include="QLTrungTamNgoaiNguBUS\NhanVienBUS.cs" />
+    <Compile Include="QLTrungTamNgoaiNguBUS\TaiKhoanBUS.cs" />
+    <Compile Include="QLTrungTamNgoaiNguDAO\Connection.cs" />
+    <Compile Include="QLTrungTamNgoaiNguDAO\HoaDonDAO.cs" />
+    <Compile Include="QLTrungTamNgoaiNguDAO\HocVienDAO.cs" />
+    <Compile Include="QLTrungTamNgoaiNguDAO\KhoaHocDAO.cs" />
+    <Compile Include="QLTrungTamNgoaiNguDAO\LoaiKhoaHocDAO.cs" />
+    <Compile Include="QLTrungTamNgoaiNguDAO\LoaiNhanVienDAO.cs" />
+    <Compile Include="QLTrungTamNgoaiNguDAO\LopHocDAO.cs" />
+    <Compile Include="QLTrungTamNgoaiNguDAO\NhanVienDAO.cs" />
+    <Compile Include="QLTrungTamNgoaiNguDAO\TaiKhoanDAO.cs" />
+    <Compile Include="QLTrungTamNgoaiNguDTO\BangDiemDTO.cs" />
+    <Compile Include="QLTrungTamNgoaiNguDTO\HoaDonDTO.cs" />
+    <Compile Include="QLTrungTamNgoaiNguDTO\HocVienBangDiemDTO.cs" />
+    <Compile Include="QLTrungTamNgoaiNguDTO\HocVienDTO.cs" />
+    <Compile Include="QLTrungTamNgoaiNguDTO\KhoaHocDTO.cs" />
+    <Compile Include="QLTrungTamNgoaiNguDTO\LoaiKhoaHocDTO.cs" />
+    <Compile Include="QLTrungTamNgoaiNguDTO\LoaiNhanVienDTO.cs" />
+    <Compile Include="QLTrungTamNgoaiNguDTO\LopHocDTO.cs" />
+    <Compile Include="QLTrungTamNgoaiNguDTO\NhanVienDTO.cs" />
+    <Compile Include="QLTrungTamNgoaiNguDTO\TaiKhoanDTO.cs" />
+    <Compile Include="QLTrungTamNgoaiNguGUI\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmBangDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmBangDiem.Designer.cs">
+      <DependentUpon>frmBangDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmHoaDon.Designer.cs">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmHocVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmHocVien.Designer.cs">
+      <DependentUpon>frmHocVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmDangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmDangKy.Designer.cs">
+      <DependentUpon>frmDangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmKhoaHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmKhoaHoc.Designer.cs">
+      <DependentUpon>frmKhoaHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmLoaiKhoaHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmLoaiKhoaHoc.Designer.cs">
+      <DependentUpon>frmLoaiKhoaHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmLoaiNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmLoaiNhanVien.Designer.cs">
+      <DependentUpon>frmLoaiNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmLopHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmLopHoc.Designer.cs">
+      <DependentUpon>frmLopHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmNhanVien.Designer.cs">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmQuenMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTrungTamNgoaiNguGUI\frmQuenMatKhau.Designer.cs">
+      <DependentUpon>frmQuenMatKhau.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="QLTrungTamNgoaiNguGUI\frmBangDiem.resx">
+      <DependentUpon>frmBangDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTrungTamNgoaiNguGUI\frmDangKy.resx">
+      <DependentUpon>frmDangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTrungTamNgoaiNguGUI\frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTrungTamNgoaiNguGUI\frmHoaDon.resx">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTrungTamNgoaiNguGUI\frmHocVien.resx">
+      <DependentUpon>frmHocVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTrungTamNgoaiNguGUI\frmKhoaHoc.resx">
+      <DependentUpon>frmKhoaHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTrungTamNgoaiNguGUI\frmLoaiKhoaHoc.resx">
+      <DependentUpon>frmLoaiKhoaHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTrungTamNgoaiNguGUI\frmLoaiNhanVien.resx">
+      <DependentUpon>frmLoaiNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTrungTamNgoaiNguGUI\frmLopHoc.resx">
+      <DependentUpon>frmLopHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTrungTamNgoaiNguGUI\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTrungTamNgoaiNguGUI\frmNhanVien.resx">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTrungTamNgoaiNguGUI\frmQuenMatKhau.resx">
+      <DependentUpon>frmQuenMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homebackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\education.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\education %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\class.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\project.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\score.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
