@@ -48,23 +48,27 @@ namespace QLTrungTamNN.QLTrungTamNgoaiNguGUI
                     TaiKhoanDTO tkDangNhap = tkBUS.ktDangNhap(tenTK, mk);
                     if (tkDangNhap == null)
                     {
-                        MessageBox.Show("Không tìm thấy tài khoản");
+                        MessageBox.Show("Vui lòng kiểm tra lại tài khoản");
                         return;
                     }
-
-                    NhanVienBUS nvBUS = new NhanVienBUS();
-                    nvDangNhap = nvBUS.thongTinNhanVien(tkDangNhap);
-                    if (nvDangNhap == null)
+                    else
                     {
-                        MessageBox.Show("Không tìm thấy thông tin nhân viên tương ứng");
-                        return;
+                        MessageBox.Show("Đăng nhập thành công");
+                        frmMain f = new frmMain();
+                        f.MdiParent = this.MdiParent; // Đặt frmMain là con của MdiParent của frmDangNhap
+                        f.Show();
+                        if (tenTK.Equals("abc123") && mk.Equals("abc123"))
+                        {
+                            f.setDangNhapThanhCong("LNV001");
+                        }
+                        else
+                        {
+                            NhanVienBUS nvBUS = new NhanVienBUS();
+                            nvDangNhap = nvBUS.thongTinNhanVien(tkDangNhap);
+                            f.setDangNhapThanhCong(nvDangNhap.MaLoaiNhanVien);
+                        }
+                        this.Close();
                     }
-
-                    MessageBox.Show("Đăng nhập thành công");
-                    frmMain f = new frmMain();
-                    f.ShowDialog();
-                    f.setDangNhapThanhCong(nvDangNhap);
-                    this.Close();
                 }
                 catch (Exception ex)
                 {
@@ -72,6 +76,7 @@ namespace QLTrungTamNN.QLTrungTamNgoaiNguGUI
                 }
             }
         }
+
 
         private void frmDangNhap_Load(object sender, EventArgs e)
         {

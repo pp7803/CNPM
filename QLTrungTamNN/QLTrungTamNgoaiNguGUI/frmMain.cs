@@ -20,13 +20,15 @@ namespace QLTrungTamNN.QLTrungTamNgoaiNguGUI
         public frmMain()
         {
             InitializeComponent();
+            this.IsMdiContainer = true;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
             frmDangNhap f = new frmDangNhap();
-            f.ShowDialog();
+            f.MdiParent = this;
+            f.Dock = DockStyle.Top;
+            f.Show();
         }
          
         private void sidebarTimer_Tick(object sender, EventArgs e)
@@ -56,11 +58,10 @@ namespace QLTrungTamNN.QLTrungTamNgoaiNguGUI
             sidebarTimer.Start();
         }
 
-        internal void setDangNhapThanhCong(NhanVienDTO nv)
+        internal void setDangNhapThanhCong(string nv)
         {
             isDangNhap = true;
-            nvDangNhap = nv;
-            if (nvDangNhap.MaLoaiNhanVien.Equals("LNV001"))
+            if (nv.Equals("LNV001"))
             {
                 buttonHome.Enabled = true;
                 buttonKhoaHoc.Enabled = true;
@@ -71,7 +72,7 @@ namespace QLTrungTamNN.QLTrungTamNgoaiNguGUI
                 buttonthongTin.Enabled = true;
                 buttonDangXuat.Enabled = true;
             }
-            else if (nvDangNhap.MaLoaiNhanVien.Equals("LNV002"))
+            else if (nv.Equals("LNV002"))
             {
                 buttonHome.Enabled = true;
                 buttonKhoaHoc.Enabled = true;
@@ -82,7 +83,7 @@ namespace QLTrungTamNN.QLTrungTamNgoaiNguGUI
                 buttonthongTin.Enabled = true;
                 buttonDangXuat.Enabled = true;
             }
-            else if (nvDangNhap.MaLoaiNhanVien.Equals("LNV003"))
+            else if (nv.Equals("LNV003"))
             {
                 buttonHome.Enabled = true;
                 buttonKhoaHoc.Enabled = true;

@@ -116,7 +116,7 @@ namespace QLTrungTamNN.QLTrungTamNgoaiNguDAO
             }
             if (string.IsNullOrEmpty(ma))
             {
-                return "GV000001";
+                return "GV001";
             }
             int chuyenSo = int.Parse(ma.Replace("NV", ""));
             string maRes = "NV" + (chuyenSo + 1).ToString("000000");
