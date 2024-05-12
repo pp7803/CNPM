@@ -432,3 +432,7 @@ INSERT INTO HOADON VALUES
 
 INSERT INTO TAIKHOAN VALUES
 	(N'abc123', N'abc123', 'abc@gmail.com' , 1)
+
+INSERT INTO TAIKHOAN VALUES
+	(N'abe123', N'abf123', 'abc@gmail.com' , 1)
+
