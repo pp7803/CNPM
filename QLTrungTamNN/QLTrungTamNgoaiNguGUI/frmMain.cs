@@ -60,7 +60,7 @@ namespace QLTrungTamNN.QLTrungTamNgoaiNguGUI
         {
             isDangNhap = true;
             nvDangNhap = nv;
-            if (nvDangNhap.MaLoaiNhanVien.Equals("LNV000001"))
+            if (nvDangNhap.MaLoaiNhanVien.Equals("LNV001"))
             {
                 buttonHome.Enabled = true;
                 buttonKhoaHoc.Enabled = true;
@@ -71,7 +71,7 @@ namespace QLTrungTamNN.QLTrungTamNgoaiNguGUI
                 buttonthongTin.Enabled = true;
                 buttonDangXuat.Enabled = true;
             }
-            else if (nvDangNhap.MaLoaiNhanVien.Equals("LNV000002"))
+            else if (nvDangNhap.MaLoaiNhanVien.Equals("LNV002"))
             {
                 buttonHome.Enabled = true;
                 buttonKhoaHoc.Enabled = true;
@@ -82,7 +82,7 @@ namespace QLTrungTamNN.QLTrungTamNgoaiNguGUI
                 buttonthongTin.Enabled = true;
                 buttonDangXuat.Enabled = true;
             }
-            else if (nvDangNhap.MaLoaiNhanVien.Equals("LNV000003"))
+            else if (nvDangNhap.MaLoaiNhanVien.Equals("LNV003"))
             {
                 buttonHome.Enabled = true;
                 buttonKhoaHoc.Enabled = true;
