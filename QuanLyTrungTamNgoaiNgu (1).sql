@@ -278,3 +278,8 @@ INSERT INTO TAIKHOAN VALUES
 	(N'abc123', N'abc123', 'abc@gmail.com' , 1),
 	(N'abe123', N'abf123', 'abc@gmail.com' , 1)
 
+INSERT INTO NHANVIEN VALUES
+	(N'QL002', N'Nguyễn Thị', N'Nguyên', '1990/04/11', 1, N'TPHCM', N'0123333345', N'nttnguyen@gmail.com',  N'LNV01', 1)
+
+INSERT INTO TAIKHOAN VALUES
+	(N'thunguyen02', N'abc123', 'nttnguyen@gmail.com' , 1)

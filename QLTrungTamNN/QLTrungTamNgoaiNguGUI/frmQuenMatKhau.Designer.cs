@@ -31,10 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuenMatKhau));
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.buttonQMK = new System.Windows.Forms.Button();
+            this.textBoxOTP = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonMaOTP = new System.Windows.Forms.Button();
+            this.buttonThoat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +60,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkGreen;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label3.Location = new System.Drawing.Point(91, 335);
+            this.label3.Location = new System.Drawing.Point(91, 376);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 22);
             this.label3.TabIndex = 22;
@@ -66,34 +68,34 @@
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label3.UseMnemonic = false;
             // 
-            // button1
+            // buttonQMK
             // 
-            this.button1.BackColor = System.Drawing.Color.PaleGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(181, 431);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 44);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Đăng Ký";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonQMK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(209)))), ((int)(((byte)(200)))));
+            this.buttonQMK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonQMK.Font = new System.Drawing.Font("Constantia", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonQMK.ForeColor = System.Drawing.Color.White;
+            this.buttonQMK.Location = new System.Drawing.Point(95, 438);
+            this.buttonQMK.Name = "buttonQMK";
+            this.buttonQMK.Size = new System.Drawing.Size(144, 54);
+            this.buttonQMK.TabIndex = 4;
+            this.buttonQMK.Text = "Xác Nhận";
+            this.buttonQMK.UseVisualStyleBackColor = false;
             // 
-            // textBox4
+            // textBoxOTP
             // 
-            this.textBox4.Location = new System.Drawing.Point(171, 325);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(293, 39);
-            this.textBox4.TabIndex = 17;
+            this.textBoxOTP.Location = new System.Drawing.Point(171, 366);
+            this.textBoxOTP.Multiline = true;
+            this.textBoxOTP.Name = "textBoxOTP";
+            this.textBoxOTP.Size = new System.Drawing.Size(290, 39);
+            this.textBoxOTP.TabIndex = 3;
             // 
-            // textBox3
+            // textBoxEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(171, 262);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(293, 39);
-            this.textBox3.TabIndex = 18;
+            this.textBoxEmail.Location = new System.Drawing.Point(171, 262);
+            this.textBoxEmail.Multiline = true;
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(290, 39);
+            this.textBoxEmail.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -107,6 +109,33 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
+            // buttonMaOTP
+            // 
+            this.buttonMaOTP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(209)))), ((int)(((byte)(200)))));
+            this.buttonMaOTP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMaOTP.Font = new System.Drawing.Font("Arial", 11F);
+            this.buttonMaOTP.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonMaOTP.Location = new System.Drawing.Point(331, 309);
+            this.buttonMaOTP.Name = "buttonMaOTP";
+            this.buttonMaOTP.Size = new System.Drawing.Size(130, 44);
+            this.buttonMaOTP.TabIndex = 2;
+            this.buttonMaOTP.Text = "Lấy Mã OTP";
+            this.buttonMaOTP.UseVisualStyleBackColor = false;
+            this.buttonMaOTP.Click += new System.EventHandler(this.buttonMaOTP_Click);
+            // 
+            // buttonThoat
+            // 
+            this.buttonThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(209)))), ((int)(((byte)(200)))));
+            this.buttonThoat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonThoat.Font = new System.Drawing.Font("Constantia", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonThoat.ForeColor = System.Drawing.Color.White;
+            this.buttonThoat.Location = new System.Drawing.Point(357, 438);
+            this.buttonThoat.Name = "buttonThoat";
+            this.buttonThoat.Size = new System.Drawing.Size(104, 54);
+            this.buttonThoat.TabIndex = 5;
+            this.buttonThoat.Text = "Thoát";
+            this.buttonThoat.UseVisualStyleBackColor = false;
+            // 
             // frmQuenMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -115,13 +144,19 @@
             this.ClientSize = new System.Drawing.Size(572, 553);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.buttonMaOTP);
+            this.Controls.Add(this.buttonThoat);
+            this.Controls.Add(this.buttonQMK);
+            this.Controls.Add(this.textBoxOTP);
+            this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(590, 600);
+            this.MinimumSize = new System.Drawing.Size(590, 600);
             this.Name = "frmQuenMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmQuenMatKhau";
+            this.Text = "Quên Mật Khẩu";
+            this.Load += new System.EventHandler(this.frmQuenMatKhau_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -132,9 +167,11 @@
 
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button buttonQMK;
+        private System.Windows.Forms.TextBox textBoxOTP;
+        private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonMaOTP;
+        private System.Windows.Forms.Button buttonThoat;
     }
 }

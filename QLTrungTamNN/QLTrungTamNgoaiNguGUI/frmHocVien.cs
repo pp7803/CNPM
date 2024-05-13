@@ -17,22 +17,18 @@ namespace QLTrungTamNN.QLTrungTamNgoaiNguGUI
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+
+        private void menuButton_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel12_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
         private void sidebar_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void sidebarTimer_Tick(object sender, EventArgs e)
         {
 
         }

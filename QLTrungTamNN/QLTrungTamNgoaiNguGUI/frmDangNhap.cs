@@ -26,61 +26,40 @@ namespace QLTrungTamNN.QLTrungTamNgoaiNguGUI
             quenMatKhau.ShowDialog();
         }
 
-        private void linkLabelDangKy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            frmDangKy dangKy = new frmDangKy();
-            dangKy.ShowDialog();
-        }
 
         private void buttonDangNhap_Click(object sender, EventArgs e)
         {
             string tenTK = textBoxTenTK.Text;
             string mk = textBoxMatKhau.Text;
-            if (tenTK.Trim() == "" || mk.Trim() == "")
+            if (tenTK.Trim() == "")
             {
-                MessageBox.Show("Chưa nhập thông tin tài khoản");
+                MessageBox.Show("Chưa nhập thông tin tài khoản.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (mk.Trim() == "")
+            {
+                MessageBox.Show("Chưa nhập thông tin mật khẩu.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                try
+                TaiKhoanBUS tkBUS = new TaiKhoanBUS();
+                TaiKhoanDTO tkDangNhap = tkBUS.ktDangNhap(tenTK,mk);
+                NhanVienBUS nvBUS = new NhanVienBUS();
+                nvDangNhap = nvBUS.thongTinNhanVien(tkDangNhap);
+                if (nvDangNhap != null)
                 {
-                    TaiKhoanBUS tkBUS = new TaiKhoanBUS();
-                    TaiKhoanDTO tkDangNhap = tkBUS.ktDangNhap(tenTK, mk);
-                    if (tkDangNhap == null)
-                    {
-                        MessageBox.Show("Vui lòng kiểm tra lại tài khoản");
-                        return;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Đăng nhập thành công");
-                        frmMain f = new frmMain();
-                        f.MdiParent = this.MdiParent; // Đặt frmMain là con của MdiParent của frmDangNhap
-                        f.Show();
-                        if (tenTK.Equals("abc123") && mk.Equals("abc123"))
-                        {
-                            f.setDangNhapThanhCong("LNV001");
-                        }
-                        else
-                        {
-                            NhanVienBUS nvBUS = new NhanVienBUS();
-                            nvDangNhap = nvBUS.thongTinNhanVien(tkDangNhap);
-                            f.setDangNhapThanhCong(nvDangNhap.MaLoaiNhanVien);
-                        }
-                        this.Close();
-                    }
+                    MessageBox.Show("Đăng nhập thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    frmMain f = new frmMain();
+                    f.setDangNhapThanhCong(nvDangNhap);
+                    f.ShowDialog();
+                    this.Close();
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+                    MessageBox.Show("Sai mật khẩu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-
-        private void frmDangNhap_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

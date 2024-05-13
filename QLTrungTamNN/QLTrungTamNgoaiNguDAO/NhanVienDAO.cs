@@ -41,9 +41,9 @@ namespace QLTrungTamNN.QLTrungTamNgoaiNguDAO
 
             if (tk != null)
             {
-                string strTruyVanNV = "Select * From NHANVIEN Where MA_NHAN_VIEN = @MaNV And TINH_TRANG = 1";
+                string strTruyVanNV = "SELECT * FROM NHANVIEN WHERE EMAIL = (SELECT EMAIL FROM TAIKHOAN WHERE TAI_KHOAN = @TaiKhoan)";
                 SqlParameter[] paramNV = new SqlParameter[1];
-                paramNV[0] = new SqlParameter("@MaNV", tk.TaiKhoan);
+                paramNV[0] = new SqlParameter("@TaiKhoan", tk.TaiKhoan);
                 SqlConnection conn = Connection.GetConnection();
                 conn.Open();
                 SqlDataReader sdr = Connection.truyVanDuLieu(strTruyVanNV, paramNV, conn);
@@ -51,16 +51,16 @@ namespace QLTrungTamNN.QLTrungTamNgoaiNguDAO
                 if (sdr.Read())
                 {
                     nhanVienKQ = new NhanVienDTO();
-                    nhanVienKQ.MaNhanVien = sdr["MaNhanVien"].ToString();
-                    nhanVienKQ.Ho = sdr["Ho"].ToString();
-                    nhanVienKQ.Ten = sdr["Ten"].ToString();
-                    nhanVienKQ.NgaySinh = DateTime.Parse(sdr["NgaySinh"].ToString());
-                    nhanVienKQ.GioiTinh = int.Parse(sdr["GioiTinh"].ToString());
-                    nhanVienKQ.DiaChi = sdr["DiaChi"].ToString();
+                    nhanVienKQ.MaNhanVien = sdr["MA_NHAN_VIEN"].ToString();
+                    nhanVienKQ.Ho = sdr["HO"].ToString();
+                    nhanVienKQ.Ten = sdr["TEN"].ToString();
+                    nhanVienKQ.NgaySinh = DateTime.Parse(sdr["NGAY_SINH"].ToString());
+                    nhanVienKQ.GioiTinh = int.Parse(sdr["GIOI_TINH"].ToString());
+                    nhanVienKQ.DiaChi = sdr["DIA_CHI"].ToString();
                     nhanVienKQ.Sdt = sdr["SDT"].ToString();
-                    nhanVienKQ.Email = sdr["Email"].ToString();
-                    nhanVienKQ.MaLoaiNhanVien = sdr["MaLoaiNhanVien"].ToString();
-                    nhanVienKQ.Tinhtrang = int.Parse(sdr["Tinhtrang"].ToString());
+                    nhanVienKQ.Email = sdr["EMAIL"].ToString();
+                    nhanVienKQ.MaLoaiNhanVien = sdr["MA_LOAI_NHAN_VIEN"].ToString();
+                    nhanVienKQ.Tinhtrang = int.Parse(sdr["TINH_TRANG"].ToString());
                 }
                 sdr.Close();
                 conn.Close();

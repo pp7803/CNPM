@@ -35,7 +35,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.textBoxMatKhau = new System.Windows.Forms.TextBox();
             this.linkLabelQuenMK = new System.Windows.Forms.LinkLabel();
-            this.linkLabelDangKy = new System.Windows.Forms.LinkLabel();
             this.buttonDangNhap = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -102,8 +101,8 @@
             // 
             this.linkLabelQuenMK.AutoSize = true;
             this.linkLabelQuenMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelQuenMK.LinkColor = System.Drawing.Color.Green;
-            this.linkLabelQuenMK.Location = new System.Drawing.Point(94, 414);
+            this.linkLabelQuenMK.LinkColor = System.Drawing.Color.LightSeaGreen;
+            this.linkLabelQuenMK.Location = new System.Drawing.Point(333, 418);
             this.linkLabelQuenMK.Name = "linkLabelQuenMK";
             this.linkLabelQuenMK.Size = new System.Drawing.Size(139, 20);
             this.linkLabelQuenMK.TabIndex = 4;
@@ -111,25 +110,12 @@
             this.linkLabelQuenMK.Text = " Quên Mật Khẩu?";
             this.linkLabelQuenMK.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelQuenMK_LinkClicked);
             // 
-            // linkLabelDangKy
-            // 
-            this.linkLabelDangKy.AutoSize = true;
-            this.linkLabelDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelDangKy.LinkColor = System.Drawing.Color.Green;
-            this.linkLabelDangKy.Location = new System.Drawing.Point(400, 414);
-            this.linkLabelDangKy.Name = "linkLabelDangKy";
-            this.linkLabelDangKy.Size = new System.Drawing.Size(72, 20);
-            this.linkLabelDangKy.TabIndex = 5;
-            this.linkLabelDangKy.TabStop = true;
-            this.linkLabelDangKy.Text = "Đăng Ký";
-            this.linkLabelDangKy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelDangKy_LinkClicked);
-            // 
             // buttonDangNhap
             // 
-            this.buttonDangNhap.BackColor = System.Drawing.Color.PaleGreen;
+            this.buttonDangNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(209)))), ((int)(((byte)(200)))));
             this.buttonDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDangNhap.Font = new System.Drawing.Font("Constantia", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDangNhap.ForeColor = System.Drawing.Color.Black;
+            this.buttonDangNhap.ForeColor = System.Drawing.Color.Transparent;
             this.buttonDangNhap.Location = new System.Drawing.Point(231, 471);
             this.buttonDangNhap.Name = "buttonDangNhap";
             this.buttonDangNhap.Size = new System.Drawing.Size(129, 44);
@@ -145,7 +131,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(572, 553);
             this.Controls.Add(this.buttonDangNhap);
-            this.Controls.Add(this.linkLabelDangKy);
             this.Controls.Add(this.linkLabelQuenMK);
             this.Controls.Add(this.textBoxMatKhau);
             this.Controls.Add(this.pictureBox3);
@@ -153,10 +138,11 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(590, 600);
+            this.MinimumSize = new System.Drawing.Size(590, 600);
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
-            this.Load += new System.EventHandler(this.frmDangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -173,7 +159,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox textBoxMatKhau;
         private System.Windows.Forms.LinkLabel linkLabelQuenMK;
-        private System.Windows.Forms.LinkLabel linkLabelDangKy;
         private System.Windows.Forms.Button buttonDangNhap;
     }
 }

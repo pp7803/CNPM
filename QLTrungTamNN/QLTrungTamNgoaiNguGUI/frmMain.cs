@@ -20,15 +20,11 @@ namespace QLTrungTamNN.QLTrungTamNgoaiNguGUI
         public frmMain()
         {
             InitializeComponent();
-            this.IsMdiContainer = true;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            frmDangNhap f = new frmDangNhap();
-            f.MdiParent = this;
-            f.Dock = DockStyle.Top;
-            f.Show();
+            
         }
          
         private void sidebarTimer_Tick(object sender, EventArgs e)
@@ -57,11 +53,13 @@ namespace QLTrungTamNN.QLTrungTamNgoaiNguGUI
         {
             sidebarTimer.Start();
         }
-
-        internal void setDangNhapThanhCong(string nv)
+        
+        internal void setDangNhapThanhCong(NhanVienDTO nv)
         {
             isDangNhap = true;
-            if (nv.Equals("LNV001"))
+            nvDangNhap = nv;
+            labelperson.Text = "Hi, " + nvDangNhap.Ten;
+            if (nvDangNhap.MaLoaiNhanVien == "LNV01") //quản lý
             {
                 buttonHome.Enabled = true;
                 buttonKhoaHoc.Enabled = true;
@@ -69,47 +67,51 @@ namespace QLTrungTamNN.QLTrungTamNgoaiNguGUI
                 buttonGiaoVien.Enabled = true;
                 buttonDiem.Enabled = true;
                 buttonHoaDon.Enabled = true;
-                buttonthongTin.Enabled = true;
+                buttontquanly.Enabled = true;
                 buttonDangXuat.Enabled = true;
+                buttonthongtin.Enabled = true;
+                buttonhocvien.Enabled = true;
             }
-            else if (nv.Equals("LNV002"))
+            else if (nvDangNhap.MaLoaiNhanVien == "LNV02") //giảng viên
             {
                 buttonHome.Enabled = true;
-                buttonKhoaHoc.Enabled = true;
+                buttonKhoaHoc.Enabled = false;
                 buttonLopHoc.Enabled = true;
                 buttonGiaoVien.Enabled = true;
                 buttonDiem.Enabled = true;
                 buttonHoaDon.Enabled = false;
-                buttonthongTin.Enabled = true;
+                buttontquanly.Enabled = false;
                 buttonDangXuat.Enabled = true;
+                buttonthongtin.Enabled=true;
+                buttonhocvien.Enabled=true;
             }
-            else if (nv.Equals("LNV003"))
+            else //Nhân viên
             {
                 buttonHome.Enabled = true;
-                buttonKhoaHoc.Enabled = true;
+                buttonKhoaHoc.Enabled = false;
                 buttonLopHoc.Enabled = true;
-                buttonGiaoVien.Enabled = true;
-                buttonDiem.Enabled = true;
-                buttonHoaDon.Enabled = false;
-                buttonthongTin.Enabled = true;
-                buttonDangXuat.Enabled = true;
-            }
-            else
-            {
-                buttonHome.Enabled = true;
-                buttonKhoaHoc.Enabled = true;
-                buttonLopHoc.Enabled = true;
-                buttonGiaoVien.Enabled = true;
-                buttonDiem.Enabled = true;
+                buttonGiaoVien.Enabled = false;
+                buttonDiem.Enabled = false;
                 buttonHoaDon.Enabled = true;
-                buttonthongTin.Enabled = true;
+                buttontquanly.Enabled = false;
                 buttonDangXuat.Enabled = true;
+                buttonthongtin.Enabled=true;
+                buttonhocvien.Enabled=true;
             }
         }
 
         private void buttonHome_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonhocvien_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmHocVien frmHocVien = new frmHocVien();
+            frmHocVien.ShowDialog();
+
+            this.Close();
         }
     }
 }
